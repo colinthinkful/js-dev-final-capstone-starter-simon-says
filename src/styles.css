@@ -77,10 +77,17 @@ h1 {
   transform: rotate(-5deg);
 }
 
-.pad-red:active,
+.pad-red:active {
+  background-color: #ffca3d;
+  transform: translateY(10px);
+}
+
 .pad-red.activated {
   background-color: #ff5c36;
-  transform: translateY(10px);
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: initial;
+  animation-timing-function: linear; 
 }
 
 .pad-green {
@@ -94,10 +101,17 @@ h1 {
   transform: rotate(5deg);
 }
 
-.pad-green:active,
-.pad-green.activated {
+.pad-green:active {
   background-color: #a0ea00;
   transform: translateY(10px);
+}
+
+.pad-green.activated {
+  background-color: #a0ea00;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: initial;
+  animation-timing-function: linear; 
 }
 
 .pad-yellow {
@@ -111,10 +125,17 @@ h1 {
   transform: rotate(5deg);
 }
 
-.pad-yellow:active,
-.pad-yellow.activated {
+.pad-yellow:active {
   background-color: #ffca3d;
   transform: translateY(10px);
+}
+
+.pad-yellow.activated {
+  background-color: #ffca3d;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: initial;
+  animation-timing-function: linear; 
 }
 
 .pad-blue {
@@ -128,10 +149,17 @@ h1 {
   transform: rotate(5deg);
 }
 
-.pad-blue:active,
-.pad-blue.activated {
+.pad-blue:active {
   background-color: #2bbcff;
   transform: translateY(10px);
+}
+
+.pad-blue.activated {
+  background-color: #2bbcff;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: initial;
+  animation-timing-function: linear; 
 }
 
 .hidden {
@@ -140,4 +168,13 @@ h1 {
 
 .unclickable {
   pointer-events: none;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }
