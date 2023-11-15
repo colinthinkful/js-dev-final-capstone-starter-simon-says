@@ -306,8 +306,10 @@ function checkPress(color) {
   * a wrong turn, so call `resetGame()` with a failure message and exit the function
   */
   if(computerSequence[index] !== playerSequence[index]) {
-    lossSound.play();
-    resetGame("Better luck next time!");
+    setTimeout(() => {
+      lossSound.play();
+      resetGame("Better luck next time!");
+    }, 500);
     return;
   }
 
@@ -326,8 +328,10 @@ function checkRound() {
   // If the length of the `playerSequence` array matches `maxRoundCount`, it means that
   // the player has completed all the rounds so call `resetGame()` with a success message
   if(playerSequence.length === maxRoundCount) {
-    victorySound.play();
-    resetGame("Congratulations, you've won!");
+    setTimeout(() => {
+      victorySound.play();
+      resetGame("Congratulations, you've won!");
+    }, 500);
   } else {
     // Else, the `roundCount` variable is incremented by 1 and the `playerSequence` array
     // is reset to an empty array.
