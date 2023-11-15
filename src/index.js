@@ -52,6 +52,10 @@ let remainingPresses = 0; // track the number of presses remaining in a round
   }
 ];
 
+// Additional audio resources
+const victorySound = new Audio("./assets/success-jingle.wav");
+const lossSound = new Audio("./assets/sad-trumpet.wav");
+
 /**
  * EVENT LISTENERS
  */
@@ -302,6 +306,7 @@ function checkPress(color) {
   * a wrong turn, so call `resetGame()` with a failure message and exit the function
   */
   if(computerSequence[index] !== playerSequence[index]) {
+    lossSound.play();
     resetGame("Better luck next time!");
     return;
   }
@@ -321,6 +326,7 @@ function checkRound() {
   // If the length of the `playerSequence` array matches `maxRoundCount`, it means that
   // the player has completed all the rounds so call `resetGame()` with a success message
   if(playerSequence.length === maxRoundCount) {
+    victorySound.play();
     resetGame("Congratulations, you've won!");
   } else {
     // Else, the `roundCount` variable is incremented by 1 and the `playerSequence` array
